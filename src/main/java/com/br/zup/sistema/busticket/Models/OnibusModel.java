@@ -1,5 +1,6 @@
 package com.br.zup.sistema.busticket.Models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class OnibusModel {
@@ -10,7 +11,7 @@ public class OnibusModel {
 	private double tempoDeViagem;
 	private int lugares;
 	private int lugaresDisponiveis;
-	private List<ClienteModel> clientes;
+	private List<ClienteModel> clientes = new ArrayList<ClienteModel>();
 	public OnibusModel() {
 		super();
 	}
