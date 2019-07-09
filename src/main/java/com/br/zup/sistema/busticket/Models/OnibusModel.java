@@ -10,12 +10,12 @@ public class OnibusModel {
 	private double tempoDeViagem;
 	private int lugares;
 	private int lugaresDisponiveis;
-	private List<ClienteModel> cliente;
+	private List<ClienteModel> clientes;
 	public OnibusModel() {
 		super();
 	}
 	public OnibusModel(int onibusId, String empresa, String destino, double tempoDeViagem, int lugares,
-			int lugaresDisponiveis) {
+			int lugaresDisponiveis, List<ClienteModel> clientes) {
 		super();
 		this.onibusId = onibusId;
 		this.empresa = empresa;
@@ -23,6 +23,7 @@ public class OnibusModel {
 		this.tempoDeViagem = tempoDeViagem;
 		this.lugares = lugares;
 		this.lugaresDisponiveis = lugaresDisponiveis;
+		this.clientes = clientes;
 	}
 	public int getOnibusId() {
 		return onibusId;
@@ -61,10 +62,10 @@ public class OnibusModel {
 		this.lugaresDisponiveis = lugaresDisponiveis;
 	}
 	public List<ClienteModel> getCliente() {
-		return cliente;
+		return clientes;
 	}
-	public void setCliente(List<ClienteModel> cliente) {
-		this.cliente = cliente;
+	public void setCliente(List<ClienteModel> clientes) {
+		this.clientes = clientes;
 	}
 
 	public String toString () {
@@ -75,6 +76,7 @@ public class OnibusModel {
 		modelo.append("\nTempo de viagem : " + this.tempoDeViagem);
 		modelo.append("\nLugares : " + this.lugares);
 		modelo.append("\nLugares disponíveis : " + this.lugaresDisponiveis);
+		modelo.append("\nClientes: " + this.clientes);
 		modelo.append("\n");
 		return modelo.toString();
 	}

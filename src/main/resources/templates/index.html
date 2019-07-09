@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Compre sua passagem de ônibus aqui!</title>
+</head>
+<body>
+    
+    <div>
+        <div th:each="onibus : ${listaOnibus}">
+            <h3 th:text="${onibus.destino}"></h3>
+            <p th:text="${onibus.empresa}"></p>
+            <p th:text="${onibus.lugaresDisponiveis}"></p>
+            <span th:if="${onibus.lugaresDisponiveis > 0}"><a href="" th:attr="href=@{'cadastrar/'+${onibus.onibusId}}" >Comprar passagem</a></span>
+            <span th:unless="${onibus.lugaresDisponiveis > 0}"><h4>Esgotado</h4></span>
+        </div>
+    </div>
+
+</body>
+</html>
