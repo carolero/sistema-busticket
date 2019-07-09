@@ -8,15 +8,27 @@
 </head>
 <body>
     
-    <div>
-        <div th:each="onibus : ${listaOnibus}">
-            <h3 th:text="${onibus.destino}"></h3>
-            <p th:text="${onibus.empresa}"></p>
-            <p th:text="${onibus.lugaresDisponiveis}"></p>
-            <span th:if="${onibus.lugaresDisponiveis > 0}"><a href="" th:attr="href=@{'cadastrar/'+${onibus.onibusId}}" >Comprar passagem</a></span>
-            <span th:unless="${onibus.lugaresDisponiveis > 0}"><h4>Esgotado</h4></span>
-        </div>
-    </div>
+    <table th:each="onibus : ${listaOnibus}">
+        <tr>
+            <td><h3>Destino: </h3></td>
+            <td><h3 th:text="${onibus.destino}"></h3></td>
+        </tr>
+        <tr>
+            <td><p>Empresa: </p></td>
+            <td th:text="${onibus.empresa}"></td>
+        </tr>
+        <tr>
+            <td><p>Lugares disponíveis: </p>
+            </td>
+            <td align="center"><p th:text="${onibus.lugaresDisponiveis}"></p></td>
+        </tr>
+        <tr>
+            <td>
+                <span th:if="${onibus.lugaresDisponiveis > 0}"><a href="" th:attr="href=@{'cadastrar/'+${onibus.onibusId}}" >Comprar passagem</a></span>
+                <span th:unless="${onibus.lugaresDisponiveis > 0}"><h4>Esgotado</h4></span>
+            </td>
+        </tr>
+    </table>
 
 </body>
 </html>
