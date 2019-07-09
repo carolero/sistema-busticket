@@ -13,15 +13,8 @@ import com.br.zup.sistema.busticket.Models.OnibusModel;
 public class PassagemService {
 	
 	// Iniciando a criação de ônibus
-		private List<OnibusModel> onibus = new ArrayList<OnibusModel>(Arrays.asList(new OnibusModel(1, "Xablau", "Inferno", 0.10, 5, 4, adicionarPassageirosOnibusUm()), 
+		private List<OnibusModel> onibus = new ArrayList<OnibusModel>(Arrays.asList(new OnibusModel(1, "Xablau", "Inferno", 0.10, 20, 20, new ArrayList<ClienteModel>()), 
 				new OnibusModel(2, "Xpto", "Céu", 1.0, 5, 0, adicionarPassageirosOnibusDois())));
-
-	// Adicionando clientes ao ônibus 1 (para lotação dos assentos não disponiveis)
-	public List<ClienteModel> adicionarPassageirosOnibusUm() {
-		List<ClienteModel> clientes = new ArrayList<ClienteModel>();
-		clientes.add(new ClienteModel("Lucifer", "satanas@hell.com", 74, 2));
-		return clientes;
-	}
 	
 	// Adicionando clientes ao ônibus 2 (para lotação dos assentos não disponiveis)
 	public List<ClienteModel> adicionarPassageirosOnibusDois() {
