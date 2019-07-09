@@ -43,5 +43,16 @@ public class PassagemService {
 	public List<OnibusModel> mostrarOnibus() {
 		return this.onibus;
 	}
+	
+	// Método para cadastrar clientes
+	public void cadastrarCliente(int onibusId, ClienteModel clienteModel) {
+		for (OnibusModel onibusModel : onibus) {
+			if(onibusModel.getOnibusId() == onibusId) {
+				onibusModel.setClientes(clienteModel);
+				int lugarDisp = onibusModel.getLugaresDisponiveis() - 1;
+				onibusModel.setLugaresDisponiveis(lugarDisp);
+			}
+		}
+	}
 
 }

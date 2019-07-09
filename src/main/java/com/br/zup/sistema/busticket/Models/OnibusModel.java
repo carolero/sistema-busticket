@@ -64,8 +64,8 @@ public class OnibusModel {
 	public List<ClienteModel> getCliente() {
 		return clientes;
 	}
-	public void setCliente(List<ClienteModel> clientes) {
-		this.clientes = clientes;
+	public void setClientes(ClienteModel clientes) {
+		this.clientes.add(clientes);
 	}
 
 	public String toString () {
