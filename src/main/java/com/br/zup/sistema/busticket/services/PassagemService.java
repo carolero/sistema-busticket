@@ -9,26 +9,21 @@ import org.springframework.stereotype.Service;
 import com.br.zup.sistema.busticket.Models.ClienteModel;
 import com.br.zup.sistema.busticket.Models.OnibusModel;
 
-
-
 @Service
 public class PassagemService {
 	
 	// Iniciando a criação de ônibus
-		private List<OnibusModel> onibus = new ArrayList<OnibusModel>(Arrays.asList(new OnibusModel(1, "Xablau", "Inferno", 0.10, 5, 5, null), 
-				new OnibusModel(2, "Xpto", "Céu", 1.0, 5, 1, adicionarPassageirosOnibusUm()), new OnibusModel(3, "NoDestiny", "Setealem", 10.0, 5, 0, adicionarPassageirosOnibusDois())));
+		private List<OnibusModel> onibus = new ArrayList<OnibusModel>(Arrays.asList(new OnibusModel(1, "Xablau", "Inferno", 0.10, 5, 4, adicionarPassageirosOnibusUm()), 
+				new OnibusModel(2, "Xpto", "Céu", 1.0, 5, 0, adicionarPassageirosOnibusDois())));
 
-	// Adicionando clientes ao ônibu 2 (para lotação dos assentos não disponiveis)
+	// Adicionando clientes ao ônibus 1 (para lotação dos assentos não disponiveis)
 	public List<ClienteModel> adicionarPassageirosOnibusUm() {
 		List<ClienteModel> clientes = new ArrayList<ClienteModel>();
-		clientes.add(new ClienteModel("Jurema da Silva", "jurema123@bol.com.br", 74, 2));
-		clientes.add(new ClienteModel("Carlos Alberto", "carlinhos2000@gmail.com", 82, 4));
-		clientes.add(new ClienteModel("Capitão América", "cap1970@america.com", 99, 6));
-		clientes.add(new ClienteModel("Loki Laufeyson", "lokifeyson@gmail.com", 2984, 1));
+		clientes.add(new ClienteModel("Lucifer", "satanas@hell.com", 74, 2));
 		return clientes;
 	}
 	
-	// Adicionando clientes ao ônibu 3 (para lotação dos assentos não disponiveis)
+	// Adicionando clientes ao ônibus 2 (para lotação dos assentos não disponiveis)
 	public List<ClienteModel> adicionarPassageirosOnibusDois() {
 		List<ClienteModel> clientes = new ArrayList<ClienteModel>();
 		clientes.add(new ClienteModel("Vitor", "jurema123@bol.com.br", 42, 5));
